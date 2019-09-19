@@ -12,7 +12,11 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'aiobotocore[boto3]~=0.10.2'
+    'aiobotocore@https://github.com/philbasford/aiobotocore/tarball/boto3bump-1-12-230'
+]
+
+dependency_links=[
+    "https://github.com/philbasford/aiobotocore/tarball/boto3bump-1-12-230#egg=aiobotocore-7.10.2"
 ]
 
 setup_requirements = [
@@ -41,6 +45,7 @@ setup(
     packages=find_packages(include=['aioboto3*']),
     include_package_data=True,
     install_requires=requirements,
+    dependency_links=dependency_links,
     license="Apache 2",
     zip_safe=False,
     keywords='aioboto3',
